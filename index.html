@@ -29,7 +29,7 @@
         }
         html{
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 65px;
             font-size: 62.5%;
         }
        
@@ -42,6 +42,7 @@
             width: 100%;
             border-bottom: 1px solid grey;
             backdrop-filter: blur(20px);
+            height: 60px;
         }
         .pfp{
             height: 40px;
@@ -156,9 +157,9 @@
             
             width: 40vw;
         }
-        .intro-text p#Home{
+        .intro-text p{
             padding-top: 1vw;
-            font-size: 15px;
+            font-size: 2rem;
         }
         .intro-text h1{
             margin-top: 2.5vw;
@@ -268,7 +269,7 @@
         #About{
             
             font-size: 1.5vw;
-            margin-top: 15vw;
+            padding-top: 5vw;
             padding-bottom: 7.5vw;
 
         }
@@ -333,19 +334,21 @@
         }
 
         
-
-      
+        
             
         #Projects {
-            padding: 12rem 10%;
+            
+            
+            padding: 3vw 5rem;
             background-color: #05070a;
+            
         }
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
             gap: 4rem;
-            margin-top: 5rem;
+            
         }
 
         .project-card {
@@ -372,6 +375,8 @@
             color: rgba(59, 130, 246, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: relative; 
+            
+            
         }    
         .project-overlay {
             position: absolute;
@@ -445,6 +450,89 @@
             font-size: 1.2rem;
             font-weight: 700;
         }
+
+        #Experience {
+            padding: 3vw 5rem;
+            
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: rgba(59, 130, 246, 0.2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: #05070a;
+            border: 3px solid #3b82f6;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .content {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            border-radius: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .content:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .content .company {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            font-family: "Share Tech", sans-serif;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .content p {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -467,10 +555,10 @@
 
     </nav>
     <main>
-        <section class="intro-sec">
+        <section id="Home" class="intro-sec">
             <div class="intro">
             <div class="intro-text">
-                <p id="Home">Hello, I'm</p>
+                <p >Hello, I'm</p>
                 <h1>Rajpal Pawar.</h1>
                 <h5>Full Stack Developer & UI/UX Designer</h5>
                 <h6>I craft beautiful, user-centric digital experiences with clean code and thoughtful design. Let's build something amazing together</h6>
@@ -571,26 +659,26 @@
       
 
         <section id="Projects">
-            <p  class="gtkm">
+            <p class="gtkm">
                     &lt;/My recent work&gt;
             </p>
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-img">
-                        <i class="fa-solid fa-code"></i>
+                        <img style="object-fit: cover; height: 22rem; width: 100%; " src="Screenshot from 2025-12-27 20-38-52.png" alt="Landing Page image">
                         
                         <div class="project-overlay">
-                            <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://github.com/RajpalPawar22/new-eds-landing-page" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                            <a target="_blank" href="https://new-eds-landing-page.vercel.app/" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Engine</h3>
-                        <p>A high-performance storefront with real-time inventory management and Stripe integration.</p>
+                        <h3>Landing Page</h3>
+                        <p>A Responsive Landing Page for the EDS Club of my college, made solely using HTML and CSS</p>
                         <div class="tech-tags">
-                            <span class="tag">MERN</span>
-                            <span class="tag">Socket.io</span>
-                            <span class="tag">Redux</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Passion</span>
                         </div>
                     </div>
                 </div>
@@ -598,7 +686,7 @@
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <img style="object-fit: cover; object-position: left; height: 22rem; width: 100%; " src="portfolio.png" alt="Landing Page image">
                         
                         <div class="project-overlay">
                             <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
@@ -606,17 +694,16 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>SaaS Dashboard</h3>
-                        <p>Visualizing complex data with interactive charts and a pixel-perfect design system.</p>
+                        <h3>Portfolio</h3>
+                        <p>Made this portfolio as a college project, also to sharpen my basic CSS skills</p>
                         <div class="tech-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Chart.js</span>
-                            <span class="tag">Framer</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Dedication</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="projects-container">
                 <div class="project-card">
                     <div class="project-img">
                         <i class="fa-solid fa-code"></i>
@@ -627,17 +714,18 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Engine</h3>
-                        <p>A high-performance storefront with real-time inventory management and Stripe integration.</p>
+                        <h3>Weather App</h3>
+                        <p>just a weather app (web actually), used some API and stuff </p>
                         <div class="tech-tags">
-                            <span class="tag">MERN</span>
-                            <span class="tag">Socket.io</span>
-                            <span class="tag">Redux</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JS</span>
                         </div>
                     </div>
                 </div>
+                
 
-                <div class="project-card">
+                 <div class="project-card">
                     <div class="project-img">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                         
@@ -658,7 +746,38 @@
                 </div>
             </div>
         </section>
-
+        
+        
+            <section id="Experience">
+                <p class="gtkm">&lt;/My Journey&gt;</p>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <h2>2025 - Present</h2>
+                            <span class="company">Full Stack Developer (Aspiring)</span>
+                            <p>Pursuing Bachelors of Technology in <b>Information and Technology </b> at <b>Chameli Devi Group of Institutions.</b> Also getting started with MERN stack  </p>
+                        </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>2022 - 2024</h2>
+                        <span class="company">Completed Higher Secondary studies</span>
+                        <p>Passed-out from <b>C.M. Rise School, Dewas</b> with distictions in every subject. </p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>2020 - 2022</h2>
+                        <span class="company">Higher Education</span>
+                        <p>Also from the <b>C.M. Rise School, Dewas</b>with distictions in every subject. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            
+        </section>
     </main>
     <footer>
         Got an idea? Hit me up. I'm most likely to 'Node' a yes rather than a 'we'll see.'
