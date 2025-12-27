@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rajpal Pawar</title>
+
+    <!-- BOOTSTRP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Grid+Single:wght@100..900&family=Dancing+Script:wght@400..700&family=Share+Tech&display=swap" rel="stylesheet">
+
+    <!-- FONTS Awesome ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body{
+            background-color: hsl(222, 47%, 6%);
+            color: white;
+            overflow-x: hidden;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            font-size: 62.5%;
+        }
+       
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            position: fixed;
+            width: 100%;
+            border-bottom: 1px solid grey;
+            backdrop-filter: blur(20px);
+        }
+        .pfp{
+            height: 40px;
+            margin: 8px;
+            border-radius: 100%;
+            transition: all 0.3s ease;
+        }
+        .pfp:hover{
+            box-shadow: 0px 0px 6px yellow;
+            transform: scale(1.02);
+        }
+        .logo-name{
+            display: flex;
+            
+            align-items: center;
+        }
+        .nav-name{
+            text-decoration: none;
+            text-shadow: 0px 0px 10px blueviolet;
+            font-family: "Dancing Script", cursive;
+            font-weight: 900;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .nav-links{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-links a{
+            text-decoration: none;
+            color: gray;
+            font-size: 1.3vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover{
+            color: white;
+           
+            
+
+        }
+        .nav-links a:active{
+            color: yellow;
+        }
+        a.resume{
+            background-color: rgb(43, 43, 180);
+            color: white;
+            border-radius: 1rem;
+            border: 1px solid rgb(43, 43, 180);
+            padding: 0.3rem 1rem;
+            margin-right: 8px;
+            font-family: sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        a.resume:hover{
+            color: rgb(43, 43, 180);
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 1rem;
+            padding: 0.3rem 1rem;
+            margin-right: 8px;
+            font-family: sans-serif;
+            font-weight: 600;
+            box-shadow: 0px 0px 20px;
+        }
+        a.resume:active{
+            transform: translateY(5px);
+        }
+        .intro-sec{
+            padding-top: 100px;
+            
+            justify-content: space-around;
+            background-color: #05070a;
+            align-items: center;
+            padding-bottom: 10vw;
+        }
+        .intro{
+            
+            display: flex;
+            justify-content: space-around;
+            background-color: #05070a;
+            align-items: center;
+            
+        }
+        .pfp-cont{
+            display: flex;
+            flex-direction: column;            
+        }
+        .profile{
+            
+            height: 300px;
+           
+            border-radius: 20px;
+            border-width: 3px;
+            border-color: rgb(10, 52, 168);
+            box-shadow: 0px 0px 990px rgb(14, 13, 114);
+            
+
+            border-style: double;
+            transition: all 0.3s;
+        }
+        .profile:hover{
+            transform: scale(1.04);
+            
+        }
+        .intro-text{
+            
+            text-align: center;
+            
+            width: 40vw;
+        }
+        .intro-text p#Home{
+            padding-top: 1vw;
+            font-size: 15px;
+        }
+        .intro-text h1{
+            margin-top: 2.5vw;
+            font-family: "Anton", sans-serif;
+            font-size: 6vw;
+            color: blue;
+        }
+        .intro-text h5{
+            color: gray;
+            font-family: "Share Tech", sans-serif;
+            font-size: 2.5rem;
+            padding: 2vw;
+        }
+        .intro-text h6{
+            color: gray;
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+        }
+        .talk-btn{
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+        .talk-btn a{
+            text-decoration: none;
+            color: white;
+            background-color: blueviolet;
+            font-size: 2rem;
+            padding: 1vw 2.5vw;
+            border-radius: 2rem;
+            margin-top: 5rem;
+            font-family: "Share Tech", sans-serif;
+            transition: all 0.2s;
+            border: 1px solid blueviolet;
+        }
+        .talk-btn a:hover{
+            box-shadow: 0px 0px 15px blue;
+            opacity: 0.9;
+            border: 1px solid white;
+        }
+        .talk-btn a:active{
+            color: blueviolet;
+            background-color: white;
+            transform: translateY(5px);
+            border: 1px solid black;
+        }
+        a.cont-btn {
+            font-family: "Dancing Script", cursive;
+            font-weight: 1000;
+            background-color: white;
+            color: red;
+            border: 1px solid white;
+        }
+        a.cont-btn:hover{
+            border: 1px solid black;
+        }
+        a.cont-btn:active{
+            color: white;
+            background-color: red;
+            transform: translateY(5px);
+            border: 1px solid white;
+        }
+        .contacts{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5vw;
+            font-size: 2.5vw;
+            
+        }
+        .contacts a{
+            color: gray;
+            transition: all 0.3s;
+        }
+        .contacts a:hover{
+            color: blue;
+            text-shadow: 0px 0px 2px rgb(129, 129, 182);
+            transform: scale(1.3);
+        }
+        .contacts a:active{
+            color: yellow;
+            text-shadow: blueviolet;
+        }
+        .arrow-d{
+            color: rgb(172, 113, 228);
+            font-size: 3rem;
+            margin-top: 5vw;
+            animation: bounce 2s infinite;
+            transition: all 0.3s;
+            position: absolute;
+            
+        }
+        .arrow-d:hover{
+            color: white;
+            
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        #About{
+            
+            font-size: 1.5vw;
+            margin-top: 15vw;
+            padding-bottom: 7.5vw;
+
+        }
+        .gtkm{
+            text-align: center;
+            letter-spacing: 2px;
+            padding-bottom: 4vw ;
+            text-shadow: 0px 0px 90px blueviolet;
+            font-size: 1.5vw;
+            color: rgb(127, 127, 250);
+            font-family: monospace;
+        }
+        .about-me{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .about-me section{
+            border-left: 4px solid blue ;
+            padding-left: 1rem;
+        }
+        .about-me section h1{
+            color: blueviolet;
+            font-size: 4vw;
+            text-shadow: 0px 0px 9000px rgb(184, 127, 238);
+        } 
+        .about-me div{
+            width: 50vw;
+            
+        }
+        .about-me div h2{
+            font-size: 3rem;
+            padding-bottom: 2rem;
+           
+        }
+        .about-me div h4{
+             font-family: "Share Tech", sans-serif;
+            color: rgb(101, 148, 148);
+            font-size: 1.7rem;
+            line-height: 2.4rem;
+            letter-spacing: 1px;
+            
+        }
+        .about-stats {
+            display: flex;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item h4#h4 {
+            font-size: 4rem;
+            color: #2b65c4; 
+            font-weight: 800;
+            padding-top: 2vw;
+        }
+
+        .stat-item span {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+
+      
+            
+        #Projects {
+            padding: 12rem 10%;
+            background-color: #05070a;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 2.4rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }    
+        .project-card:hover {
+            transform: translateY(-1rem);
+            border-color: #3b82f6;
+            box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+        }
+
+        .project-img {
+            height: 22rem;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(59, 130, 246, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative; 
+        }    
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 7, 10, 0.85); 
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0; 
+            transition: opacity 0.4s ease;
+            z-index: 10;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .overlay-link {
+            width: 5rem;
+            height: 5rem;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none !important;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .overlay-link:hover {
+            transform: scale(1.15);
+            background: #2563eb;
+            color: white;
+        }
+
+        .project-info {
+            padding: 3rem;
+        }
+
+        .project-info h3 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-info p {
+            font-size: 1.6rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 0.5rem 1.4rem;
+            border-radius: 5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <a href="#Home">
+                <img class="pfp" src="Lawliet.jpeg" alt="profile picture">
+            </a>
+            <a  class="nav-name" href="#Home">Rajpal Pawar</a>
+        </div>
+        <div class="nav-links">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <!-- <a href="#Skills">Skills</a> -->
+                <a href="#Projects">Projects</a>
+                <a href="#Experience">Experience</a>
+                <a href="#Contact">Contact</a>
+                <a class="resume" href="#Home">Resume</a>
+        </div>
+
+    </nav>
+    <main>
+        <section class="intro-sec">
+            <div class="intro">
+            <div class="intro-text">
+                <p id="Home">Hello, I'm</p>
+                <h1>Rajpal Pawar.</h1>
+                <h5>Full Stack Developer & UI/UX Designer</h5>
+                <h6>I craft beautiful, user-centric digital experiences with clean code and thoughtful design. Let's build something amazing together</h6>
+                <div class="talk-btn">
+                    <a href="#Projects">View my Work</a>
+                    <a class="cont-btn" href="#Contact">Let's Talk.</a>
+                </div>
+                
+            </div>
+            <div class="pfp-cont">
+                <div>
+                    <img class="profile" src="Lawliet.jpeg" alt="Rajpal Pawar">
+                </div>
+                <div class="contacts">
+                    <a target="_blank" href="https://github.com/RajpalPawar22">
+                        <i  class="fa-brands fa-github"></i>
+                    </a>
+                    <a target="_blank" href="">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a target="_blank" href="mailto:rajpalpawar708@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a target="_blank" href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <center>
+            <a  href="#About"><i class="fa-solid fa-arrow-down arrow-d"></i></a> 
+        </center>
+        </section>
+        
+        
+        
+        <section>
+            <div id="About">
+                <p class="gtkm">
+                    &lt;/Get to know me&gt;
+                </p>
+                <div class="about-me">
+                    <section>
+                        <h1>
+                        Less Talk.
+                        
+                        </h1>
+                        <h1>
+                            More Code.
+                        </h1>
+                    </section>
+                    <div>
+                        <h2>
+                            I build products, not just features.
+                        </h2>
+                        <h4>
+                            I’m a Full Stack Developer and UI/UX Designer who bridges the gap between complex logic and clean aesthetics. No fluff —just high-performance digital solutions shipped straight from Indore.
+                        </h4>
+                        <br>
+                        <h4>
+                            My journey began with a curiosity for how things work on the web, and has evolved into a career building full-stack applications using modern technologies like React, Node.js, and cloud services.
+                        </h4>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h4 id="h4">MERN <span>(Aspiring)</span></h4>
+                                <span>Stack</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4 id="h4">Pixel</h4>
+                                <span>Perfect</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4 id="h4">Indore</h4>
+                                <span>Base</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Skills section- To be updated 
+            <div>
+                <div style="margin-top: 15vw; padding-bottom: 900px;">
+                    <p id="Skills" class="gtkm">
+                        &lt;/What I do best&gt;
+                    </p>
+                    <h3>
+                        My Skills
+                    </h3>
+                </div>
+            </div> -->
+        </section>
+
+      
+
+        <section id="Projects">
+            <p  class="gtkm">
+                    &lt;/My recent work&gt;
+            </p>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-code"></i>
+                        
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Engine</h3>
+                        <p>A high-performance storefront with real-time inventory management and Stripe integration.</p>
+                        <div class="tech-tags">
+                            <span class="tag">MERN</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">Redux</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SaaS Dashboard</h3>
+                        <p>Visualizing complex data with interactive charts and a pixel-perfect design system.</p>
+                        <div class="tech-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">Framer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-code"></i>
+                        
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Engine</h3>
+                        <p>A high-performance storefront with real-time inventory management and Stripe integration.</p>
+                        <div class="tech-tags">
+                            <span class="tag">MERN</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">Redux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="overlay-link" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SaaS Dashboard</h3>
+                        <p>Visualizing complex data with interactive charts and a pixel-perfect design system.</p>
+                        <div class="tech-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">Framer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        Got an idea? Hit me up. I'm most likely to 'Node' a yes rather than a 'we'll see.'
+    </footer>
+</body>
+</html
