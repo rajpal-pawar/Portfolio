@@ -84,7 +84,10 @@
             transition: all 0.3s;
         }
         .nav-links a:hover{
-            color: white;
+            color: wellow;
+        }
+        a.resume{
+            background-color: rghite;
            
             
 
@@ -189,7 +192,7 @@
         }
         .intro-text h1{
             margin-top: 2.5vw;
-            font-family: "Anton", sans-serif;
+            font-family: "Dancing Script", cursive;
             font-size: 6vw;
             color: blue;
         }
@@ -291,30 +294,32 @@
             font-family: monospace;
         }
         .about-me{
-            display: flex;
+            /* display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-around; */
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, ));
+            
+            padding: 0px 4rem;
         }
-        .about-me section{
+        
+        .less-tlk{
             border-left: 4px solid blue ;
             padding-left: 1rem;
-        }
-        .about-me section h1{
+            
             color: blueviolet;
-            font-size: 4vw;
+            font-size: 6vw;
             text-shadow: 0px 0px 9000px rgb(184, 127, 238);
         } 
-        .about-me div{
-            width: 50vw;
-            
-        }
+        
         .about-me div h2{
             font-size: 3rem;
             padding-bottom: 2rem;
            
         }
         .about-me div h4{
-             font-family: "Share Tech", sans-serif;
+            font-family: "Share Tech", sans-serif;
             color: rgb(101, 148, 148);
             font-size: 1.7rem;
             line-height: 2.4rem;
@@ -325,6 +330,7 @@
             display: flex;
             gap: 4rem;
             margin-top: 3rem;
+            justify-content: space-around;
         }
 
         .stat-item h4#h4 {
@@ -563,9 +569,21 @@
             grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         }
         @media screen and (max-width: 768px){
+            #Contact h2 {
+                font-size: 3rem;
+            }
+            #Contact h4 {
+                font-size: 1.8rem;
+            }
+            .footer {
+                text-align: center;
+            }
             timeline::after { left: 31px; }
+
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+
             .timeline-item::after { left: 23px !important; top: 15px; }
+
             .right { left: 0%; }
             .gtkm { font-size: 1.4rem; }
         }
@@ -641,7 +659,7 @@
                     &lt;/Get to know me&gt;
                 </p>
                 <div class="about-me">
-                    <section>
+                    <div class="less-tlk">
                         <h1>
                         Less Talk.
                         
@@ -649,7 +667,7 @@
                         <h1>
                             More Code.
                         </h1>
-                    </section>
+                    </div>
                     <div>
                         <h2>
                             I build products, not just features.
